@@ -1,0 +1,50 @@
+experiment_name: oracle_phase2_baseline
+seed: 42
+
+data:
+  jhu_confirmed: data/time_series_covid19_confirmed_global.csv
+  owid_root: data/owid
+  mobility: data/owid/google_mobility.csv
+  processed_root: data/processed
+  artifacts_root: ml/artifacts
+
+features:
+  forecast_horizon_days: 28
+  rolling_windows: [7, 14]
+  outbreak_growth_threshold: 0.5
+  require_feature_columns:
+    - daily_new_cases
+    - rolling_7d_cases
+    - case_acceleration
+    - mobility_index
+    - stringency_index
+    - people_fully_vaccinated_per_hundred
+
+baseline:
+  forecast_strategy: rolling_7d_persistence
+  outbreak_threshold_search: [0.2, 0.8]
+  train_test_split_quantile: 0.8
+
+neural_ode:
+  learning_rate: 0.001
+  epochs: 100
+  early_stopping_patience: 10
+
+temporal_gat:
+  gat_layers: 3
+  attention_heads: 8
+  hidden_dim: 128
+  transformer_layers: 4
+  epochs: 200
+  loss_weights:
+    forecast_mse: 0.7
+    outbreak_bce: 0.2
+    attention_smoothness: 0.1
+
+ensemble:
+  ode_weight: 0.45
+  gat_weight: 0.55
+
+evaluation:
+  metrics: [mae, rmse, mape, auc_roc, f1]
+  spatial_holdout_ratio: 0.2
