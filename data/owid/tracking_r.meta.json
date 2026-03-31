@@ -1,0 +1,275 @@
+{
+  "short_name": "tracking_r",
+  "title": "COVID-19, TrackingR",
+  "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+  "dataset": {
+    "channel": "garden",
+    "namespace": "covid",
+    "short_name": "tracking_r",
+    "title": "COVID-19, TrackingR",
+    "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+    "is_public": true,
+    "version": "latest",
+    "update_period_days": 0,
+    "non_redistributable": false,
+    "source_checksum": "bea480e4c9d09b4665d4566ab09eec1c"
+  },
+  "primary_key": [
+    "country",
+    "date"
+  ],
+  "dimensions": [
+    {
+      "name": "Date",
+      "slug": "country"
+    },
+    {
+      "name": "Date",
+      "slug": "date"
+    }
+  ],
+  "fields": {
+    "country": {
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ]
+    },
+    "date": {
+      "title": "Date",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ]
+    },
+    "r": {
+      "title": "Reproduction rate",
+      "description_short": "Median number of new infections caused by a single infected individual. If the rate is greater than 1, the infection is able to spread in the population. If it is below 1, the number of cases occurring in the population will gradually decrease to zero.",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 2,
+        "tolerance": 10
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Estimate of the effective reproduction rate (R) of COVID-19",
+          "subtitle": "The reproduction rate represents the average number of new infections caused by a single infected individual. If the rate is greater than 1, the infection is able to spread in the population. If it is below 1, the number of cases occurring in the population will gradually decrease to zero.",
+          "hasMapTab": true,
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0.25,
+                0.5,
+                0.75,
+                1,
+                1.25,
+                1.5,
+                2
+              ],
+              "baseColorScheme": "RdBu",
+              "colorSchemeInvert": true
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "ci_95_u": {
+      "title": "Upper limit 95% credible interval",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 3
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "ci_95_l": {
+      "title": "Lower limit 95% credible interval",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 3
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "ci_65_u": {
+      "title": "Upper limit 65% credible interval",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 3
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "ci_65_l": {
+      "title": "Lower limit 65% credible interval",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 3
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "days_infectious": {
+      "title": "Serial interval for Covid-19",
+      "description_short": "Provides a range from 5 to 10 days. An extense discussion on the effect of changing the serial interval can be found on the paper. Recent studies find that estimates of the serial interval for COVID-19 range between 4 and 9 days (Nishiura et al.,2020b;Park et al.,2020;Sanche et al.,2020). Authors suggest using 7 days (the average of the range) as point of reference.",
+      "origins": [
+        {
+          "producer": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C",
+          "title": "COVID-19, TrackingR",
+          "description": "Authors develop a new method for estimating the effective reproduction number of an infectious disease (R) and apply it to track the dynamics of COVID-19. The method is based on the fact that in the SIR model R,  is linearly related to the growth rate of the number of infected individuals. This time-varying growth rate is estimated using the Kalman filter from data on new cases. The method is easy to implement in standard statistical software, and it performs well even when the number of infected individuals is imperfectly measured, or the infection does not follow the SIR model. Our estimates of R for COVID-19 for 124 countries across the world are provided in an interactive online dashboard, and they are used to assess the effectiveness of non-pharmaceutical interventions in a sample of 14 European countries.",
+          "citation_full": "Arroyo-Marioli F, Bullano F, Kucinskas S, Rond\u00f3n-Moreno C (2021) Tracking R of COVID-19: A new real-time estimation using the Kalman filter. PLoS ONE 16(1): e0244474. https://doi.org/10.1371/journal.pone.0244474",
+          "url_main": "https://github.com/crondonm/TrackingR/tree/main",
+          "url_download": "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2023-01-06",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/crondonm/TrackingR/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "days",
+      "display": {
+        "yearIsDay": true,
+        "zeroDay": "2020-01-01",
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    }
+  }
+}

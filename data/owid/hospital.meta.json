@@ -1,0 +1,561 @@
+{
+  "short_name": "hospital",
+  "title": "COVID-19, hospitalisations",
+  "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+  "dataset": {
+    "channel": "garden",
+    "namespace": "covid",
+    "short_name": "hospital",
+    "title": "COVID-19, hospitalisations",
+    "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+    "is_public": true,
+    "version": "latest",
+    "update_period_days": 0,
+    "non_redistributable": false,
+    "source_checksum": "4f6685ef0eeb4048d6687f416e555c2a"
+  },
+  "primary_key": [
+    "country",
+    "country_code",
+    "date"
+  ],
+  "dimensions": [
+    {
+      "name": "country",
+      "slug": "country"
+    },
+    {
+      "name": "country_code",
+      "slug": "country_code"
+    },
+    {
+      "name": "date",
+      "slug": "date"
+    }
+  ],
+  "fields": {
+    "country": {
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ]
+    },
+    "country_code": {
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ]
+    },
+    "date": {},
+    "daily_occupancy_icu": {
+      "title": "Daily ICU occupancy",
+      "description_short": "Number of COVID-19 patients in ICU on a given day.",
+      "description_key": [
+        "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients in ICU",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 0,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Number of COVID-19 patients in intensive care (ICU)",
+          "note": "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                1,
+                3,
+                10,
+                30,
+                100,
+                300,
+                1000,
+                3000,
+                10000,
+                30000
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_occupancy_icu_per_1m": {
+      "title": "Daily ICU occupancy per million",
+      "description_short": "Number of COVID-19 patients in ICU on a given day, per million people.",
+      "description_key": [
+        "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients per million people",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "name": "Patients in ICU (per 1M)",
+        "numDecimalPlaces": 2,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Number of COVID-19 patients in intensive care (ICU) per million people",
+          "note": "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronaviru",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                20,
+                40,
+                60,
+                80,
+                100,
+                120,
+                140
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_occupancy_hosp": {
+      "title": "Daily hospital occupancy",
+      "description_short": "Number of COVID-19 patients in hospital on a given day.",
+      "description_key": [
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 0,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Number of COVID-19 patients in hospital",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                1,
+                10,
+                100,
+                1000,
+                10000,
+                100000,
+                1000000
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_occupancy_hosp_per_1m": {
+      "title": "Daily hospital occupancy per million",
+      "description_short": "Number of COVID-19 patients in hospital on a given day, per million people.",
+      "description_key": [
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients per million people",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 2,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Number of COVID-19 patients in hospital per million people",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                100,
+                200,
+                300,
+                400,
+                500,
+                600,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "weekly_admissions_icu": {
+      "title": "Weekly new ICU admissions",
+      "description_short": "Number of COVID-19 patients newly admitted to ICU in a given week (reporting date and the preceding six days).",
+      "description_key": [
+        "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 0,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Weekly new ICU admissions for COVID-19",
+          "subtitle": "Weekly admissions refer to the cumulative number of new admissions over the previous week.",
+          "note": "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                1,
+                3,
+                10,
+                30,
+                100,
+                300,
+                1000,
+                3000,
+                10000
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "weekly_admissions_icu_per_1m": {
+      "title": "Weekly new ICU admissions per million",
+      "description_short": "Number of COVID-19 patients newly admitted to ICU in a given week (reporting date and the preceding six days), per million people.",
+      "description_key": [
+        "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients per million people",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 2,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Weekly new ICU admissions for COVID-19 per million people",
+          "subtitle": "Weekly admissions refer to the cumulative number of new admissions over the previous week.",
+          "note": "For countries where the number of ICU patients is not reported, we display the closest metric (patients ventilated or in critical condition).",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                20,
+                40,
+                60,
+                80,
+                100,
+                120,
+                140
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "weekly_admissions_hosp": {
+      "title": "Weekly new hospital admissions",
+      "description_short": "Number of COVID-19 patients newly admitted to hospitals in a given week (reporting date and the preceding six days).",
+      "description_key": [
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "numDecimalPlaces": 0,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Weekly new hospital admissions for COVID-19",
+          "subtitle": "Weekly admissions refer to the cumulative number of new admissions over the previous week.",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                1,
+                10,
+                100,
+                1000,
+                10000,
+                100000,
+                1000000
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "weekly_admissions_hosp_per_1m": {
+      "title": "Weekly new hospital admissions per million",
+      "description_short": "Number of COVID-19 patients newly admitted to hospitals in a given week (reporting date and the preceding six days), per million people",
+      "description_key": [
+        "Hospital and ICU data are sourced from official providers and collated by Our World in Data, but no new datapoints have been added since 13 August 2024.",
+        "Gaps in more recent hospitalization trends may exist due to the cessation of regular updates after August 2024."
+      ],
+      "origins": [
+        {
+          "producer": "Official data collated by Our World in Data",
+          "title": "COVID-19, hospitalisations",
+          "description": "Our hospital & ICU data is collected from official sources and collated by Our World in Data.\n\nOn 13 August 2024, we stopped adding new datapoints to our COVID-19 hospitalisation dataset.\n\nThe data produced by third parties and made available by Our World in Data is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.",
+          "citation_full": "Edouard Mathieu, Hannah Ritchie, Lucas Rod\u00e9s-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - \"Coronavirus Pandemic (COVID-19)\". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]\n\n\nThe data has been obtained from different sources depending on the country:\n\n- Algeria: Ministry of Health (https://github.com/yasserkaddour/covid19-icu-data-algeria/)\n- Argentina: Government of Argentina, via Rodrigo Maidana (https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes)\n- Australia: Official data from states via covidbaseau.com (https://covidbaseau.com)\n- Austria: Austrian Agency for Health and Food Safety (https://covid19-dashboard.ages.at/)\n- Belgium: Sciensano (https://epistat.sciensano.be/)\n- Bolivia: Ministry of Health, via Sociedatos on GitHub (https://github.com/sociedatos/bo-hospitalizados_por_departamento)\n- Bulgaria: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Canada: Government of Canada (https://health-infobase.canada.ca/covid-19/)\n- Chile: Ministry of Health, via Ministry of Science GitHub repository (https://github.com/MinCiencia/Datos-COVID19)\n- Croatia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Cyprus: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Czechia: Ministry of Health (https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19)\n- Denmark: Statens Serum Institut, covid19-data-denmark on GitHub (https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata, https://github.com/mok0/covid19-data-denmark)\n- England: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Estonia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Finland: Department of Health and Welfare (https://www.thl.fi/episeuranta/tautitapaukset/coronamap.html)\n- France: Sant\u00e9 publique France (https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)\n- Germany: Robert Koch Institute (https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/)\n- Greece: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Hungary: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Iceland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Ireland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Israel: Ministry of Health (https://datadashboard.health.gov.il/COVID-19/)\n- Italy: Ministry of Health and Higher Institute of Health (https://github.com/pcm-dpc/COVID-19, (https://covid19.infn.it/iss/)\n- Japan: Ministry of Health, Labour and Welfare (https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html)\n- Latvia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Liechtenstein: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Lithuania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Luxembourg: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Malaysia: Ministry of Health (https://github.com/MoH-Malaysia/covid19-public)\n- Malta: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Netherlands: National Coordination Center Patient Distribution (https://lcps.nu/datafeed/)\n- Northern_Ireland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Norway: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Poland: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Portugal: General Directorate of Health, via Data Science for Social Good Portugal (https://github.com/dssg-pt/covid19pt-data)\n- Romania: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Russia: Government of Russia (https://\u0441\u0442\u043e\u043f\u043a\u043e\u0440\u043e\u043d\u0430\u0432\u0438\u0440\u0443\u0441.\u0440\u0444/information/)\n- Scotland: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- Serbia: Ministry of Health via github.com/aleksandar-jovicic/COVID19-Serbia (https://github.com/aleksandar-jovicic/COVID19-Serbia)\n- Singapore: Ministry of Health (https://covidsitrep.moh.gov.sg/; (https://data.gov.sg/dataset/covid-19-hospital-admissions)\n- South_Africa: National Policy Data Observatory (NPDO) at the Council for Scientific and Industrial Research (CSIR) (https://docs.google.com/spreadsheets/d/1Ln3FO3E0hz2r_kCCWM6on9Wd18wRvrkiIV-bbE2EDQ0/edit#gid=1044172863)\n- South_Korea: \"Ministry of Health and Welfare, via WWolf on GitHub (http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=)\n- Slovakia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Slovenia: European Centre for Disease Prevention and Control (https://www.ecdc.europa.eu/en/publications-data/download-data-hospital-and-icu-admission-rates-and-current-occupancy-covid-19)\n- Spain: Ministry of Health, Consumption and Social Welfare (https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm)\n- Sweden: The Swedish National Board of Health and Welfare (https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/)\n- Switzerland: Federal Office of Public Health (https://www.covid19.admin.ch/)\n- United_Kingdom: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare)\n- United_States: U.S. Department of Health & Human Services (https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/g62h-syeh\n- Wales: Government of the United Kingdom (https://coronavirus.data.gov.uk/details/healthcare",
+          "url_main": "https://github.com/owid/covid-19-data/",
+          "url_download": "https://github.com/owid/covid-19-data/raw/master/public/data/hospitalizations/covid-hospitalizations.csv",
+          "date_accessed": "2024-08-13",
+          "date_published": "2024-08-13",
+          "license": {
+            "name": "CC BY 4.0",
+            "url": "https://ourworldindata.org/faqs#can-i-use-or-reproduce-your-data"
+          }
+        }
+      ],
+      "unit": "patients per million people",
+      "display": {
+        "zeroDay": "2020-01-21",
+        "yearIsDay": true,
+        "name": "Hospital admissions (per 1M)",
+        "numDecimalPlaces": 2,
+        "tolerance": 15
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Weekly new hospital admissions for COVID-19 per million people",
+          "subtitle": "Weekly admissions refer to the cumulative number of new admissions over the previous week.",
+          "hasMapTab": true,
+          "originUrl": "ourworldindata.org/coronavirus",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericValues": [
+                0,
+                100,
+                200,
+                300,
+                400,
+                500,
+                600,
+                700
+              ],
+              "baseColorScheme": "YlOrRd"
+            }
+          }
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    }
+  }
+}

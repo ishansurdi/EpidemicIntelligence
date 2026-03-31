@@ -1,0 +1,446 @@
+{
+  "short_name": "vaccinations_us",
+  "title": "COVID-19, Vaccinations (United States)",
+  "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+  "dataset": {
+    "channel": "garden",
+    "namespace": "covid",
+    "short_name": "vaccinations_us",
+    "title": "COVID-19, Vaccinations (United States)",
+    "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+    "is_public": true,
+    "version": "latest",
+    "update_period_days": 365,
+    "non_redistributable": false,
+    "source_checksum": "1bfad41234033f5c49a2c884ca758bc4"
+  },
+  "primary_key": [
+    "state",
+    "date"
+  ],
+  "dimensions": [
+    {
+      "name": "state",
+      "slug": "state"
+    },
+    {
+      "name": "date",
+      "slug": "date"
+    }
+  ],
+  "fields": {
+    "state": {
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ]
+    },
+    "date": {},
+    "total_vaccinations": {
+      "title": "Total vaccinations",
+      "description_short": "Cumulative number of COVID-19 vaccination doses administered.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      },
+      "description_processing": "All doses, including boosters, are counted individually."
+    },
+    "total_distributed": {
+      "title": "Total doses distributed",
+      "description_short": "Cumulative counts of COVID-19 vaccine doses reported to Operation Warp Speed as delivered.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "people_vaccinated": {
+      "title": "People vaccinated",
+      "description_short": "Total number of people who received at least one vaccine dose.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "people",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "people_fully_vaccinated_per_hundred": {
+      "title": "People fully vaccinated (per 100 people)",
+      "description_short": "Share of people who received all doses prescribed by the vaccination protocol.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "total_vaccinations_per_hundred": {
+      "title": "Total vaccinations (per 100 people)",
+      "description_short": "Cumularive number of COVID-19 vaccination doses administered, per 100 people.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses per 100 people",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      },
+      "description_processing": "All doses, including boosters, are counted individually."
+    },
+    "people_fully_vaccinated": {
+      "title": "People fully vaccinated",
+      "description_short": "Total number of people who received all doses prescribed by the vaccination protocol.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "people",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "people_vaccinated_per_hundred": {
+      "title": "People vaccinated (per 100 people)",
+      "description_short": "Share of people who received at least one vaccine dose.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "distributed_per_hundred": {
+      "title": "Total doses distributed (per 100 people)",
+      "description_short": "Cumulative counts of COVID-19 vaccine doses reported to Operation Warp Speed as delivered, per 100 people.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses per 100 people",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_vaccinations_raw": {
+      "title": "Daily doses administered",
+      "description_short": "All doses, including boosters, are counted individually.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_vaccinations": {
+      "title": "Daily doses administered (7-day rolling average)",
+      "description_short": "All doses, including boosters, are counted individually. 7-day rolling average.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "daily_vaccinations_per_million": {
+      "title": "Daily doses administered (per million people)",
+      "description_short": "All doses, including boosters, are counted individually, per million people",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses per million people",
+      "display": {
+        "numDecimalPlaces": 2
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "share_doses_used": {
+      "title": "Share of doses used",
+      "description_short": "Share of distributed vaccination doses that have been administered/used in the population. Distributed figures represent those reported to Operation Warp Speed as delivered.",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "numDecimalPlaces": 1
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "total_boosters": {
+      "title": "Total booster doses administered",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses",
+      "display": {
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    },
+    "total_boosters_per_hundred": {
+      "title": "Total booster doses administered (per 100 people)",
+      "origins": [
+        {
+          "producer": "Centers for Disease Control and Prevention",
+          "title": "COVID-19, Vaccinations (United States)",
+          "description": "Data on vaccinations against COVID-19, collected from the data updated daily by the United States Centers for Disease Control and Prevention.",
+          "citation_full": "Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: U.S. Department of Health and Human Services, CDC; 2024, August 08. https://covid.cdc.gov/covid-data-tracker",
+          "url_main": "https://covid.cdc.gov/covid-data-tracker/",
+          "date_accessed": "2024-08-08",
+          "date_published": "2023-05-12",
+          "license": {
+            "name": "Public Domain U.S. Government",
+            "url": "https://www.usa.gov/government-copyright"
+          }
+        }
+      ],
+      "unit": "doses per 100 people",
+      "display": {
+        "numDecimalPlaces": 3
+      },
+      "presentation": {
+        "topic_tags": [
+          "COVID-19"
+        ]
+      }
+    }
+  }
+}

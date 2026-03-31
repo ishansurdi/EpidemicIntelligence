@@ -1,0 +1,2118 @@
+{
+  "short_name": "excess_mortality",
+  "dataset": {
+    "channel": "garden",
+    "namespace": "excess_mortality",
+    "short_name": "excess_mortality",
+    "title": "Excess Mortality (various sources)",
+    "description": "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.\n\nWe do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in this spreadsheet: https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing.\n\nFor a full list of source information (i.e., HMD or WMD) country by country, see: https://ourworldindata.org/excess-mortality-covid#source-information-country-by-country.\n\nWe calculate P-scores using the reported deaths data from HMD and WMD and the projected deaths since 2020 from WMD (which we use for all countries and regions, including for deaths broken down by age group). The P-score is the percentage difference between the reported number of weekly or monthly deaths since 2020 and the projected number of deaths for the same period based on previous years (years available from 2015 until 2019).\n\nWe calculate the number of weekly deaths for the United Kingdom by summing the weekly deaths from England and Wales, Scotland, and Northern Ireland.\n\nFor important issues and caveats to understand when interpreting excess mortality data, see our excess mortality page at https://ourworldindata.org/excess-mortality-covid.\n\nFor a more detailed description_short of the HMD data, including week date definitions, the coverage (of individuals, locations, and time), whether dates are for death occurrence or registration, the original national source information, and important caveats, see the HMD metadata file at https://www.mortality.org/Public/STMF_DOC/STMFmetadata.pdf.\n\nFor a more detailed description_short of the WMD data, including original source information, see their GitHub page at https://github.com/akarlinsky/world_mortality.",
+    "sources": [
+      {
+        "name": "Human Mortality Database",
+        "description": "In response to the COVID-19 pandemic, the HMD team decided to establish a new data resource: Short-term Mortality Fluctuations (STMF) data series. Objective and internationally comparable data are crucial to determine the effectiveness of different strategies used to address epidemics. Weekly death counts provide the most objective and comparable way of assessing the scale of short-term mortality elevations across countries and time. More details about this data project can be found in the recently published paper (https://www.nature.com/articles/s41597-021-01019-1).\n\nBefore using the data, please consult the STMF Methodological Note (https://www.mortality.org/File/GetDocument/Public/STMF_DOC/STMFNote.pdf), which provides a more comprehensive description of this data project, including important aspects related to data collection and data processing. We also recommend that you read the STMF Metadata (https://www.mortality.org/File/GetDocument/Public/STMF_DOC/STMFmetadata.pdf). This document includes country-specific information about data availability, completeness, data sources, as well as specific features of included data.\n\nData will be frequently updated and new countries will be added. Data are published under CC BY 4.0 license.\n\nFor citing STMF data, please follow the HMD data citation guidelines (https://www.mortality.org/Research/CitationGuidelines).\n\nHMD provides an online STMF visualization toolkit (https://mpidr.shinyapps.io/stmortality).",
+        "url": "https://www.mortality.org/Data/STMF",
+        "source_data_url": "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs/stmf.csv",
+        "date_accessed": "2026-03-24",
+        "publication_date": "2026-03-04",
+        "publication_year": 2026,
+        "published_by": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org."
+      },
+      {
+        "name": "World Mortality Dataset (2024)",
+        "description": "World Mortality Dataset: international data on all-cause mortality.\n\nThis dataset contains country-level data on all-cause mortality in 2015\u20132024 collected from various sources. They are currently providing data for 122 countries and territories.\n\nFor a complete and up-to-date list of notes on the dataset, please refer to their GitHub page at https://github.com/akarlinsky/world_mortality/.\n\nFor the list of sources that they use, please go to https://github.com/akarlinsky/world_mortality/#sou rces.\n\nPublished paper available at https://elifesciences.org/articles/69336.",
+        "url": "https://github.com/akarlinsky/world_mortality/",
+        "source_data_url": "https://raw.githubusercontent.com/akarlinsky/world_mortality/main/world_mortality.csv",
+        "date_accessed": "2026-03-24",
+        "publication_date": "2021-06-30",
+        "publication_year": 2021,
+        "published_by": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336"
+      },
+      {
+        "name": "Karlinsky and Kobak (2021)",
+        "description": "The data are sourced from the World Mortality Dataset (https://github.com/akarlinsky/world_mortality). Excess mortality is computed relative to the baseline obtained using linear extrapolation of the 2015\u201319 trend (different baselines for 2020, 2021, and 2022). In each subplot in the figure below, gray lines are 2015\u201319, black line is baseline for 2020, red line is 2020, blue line is 2021, orange line is 2022. Countries are sorted by the total excess mortality as % of the 2020 baseline.\n\nFor more details, refer to https://github.com/dkobak/excess-mortality#excess-mortality-during-the-covid-19-pandemic.",
+        "url": "https://github.com/dkobak/excess-mortality",
+        "source_data_url": "https://raw.githubusercontent.com/dkobak/excess-mortality/main/baselines-per-year.csv",
+        "date_accessed": "2026-03-24",
+        "publication_date": "2021-06-30",
+        "publication_year": 2021,
+        "published_by": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336"
+      }
+    ],
+    "is_public": true,
+    "version": "latest",
+    "non_redistributable": false,
+    "source_checksum": "eb1f7a35ed2e5f3e20b9cda846aaca68"
+  },
+  "primary_key": [
+    "entity",
+    "date"
+  ],
+  "dimensions": [
+    {
+      "name": "entity",
+      "slug": "entity"
+    },
+    {
+      "name": "date",
+      "slug": "date"
+    }
+  ],
+  "fields": {
+    "entity": {},
+    "date": {},
+    "time": {
+      "title": "Time",
+      "description_short": "The week or month number in the year.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "time_unit": {
+      "title": "Time unit",
+      "description_short": "Denotes whether the \u201ctime\u201d column values are weekly or monthly.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "average_deaths_2015_2019_all_ages": {
+      "title": "average_deaths_2015_2019_all_ages",
+      "description_short": "The average number of weekly or monthly deaths from all causes for all ages over the years 2015\u20132019.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "p_avg_0_14": {
+      "title": "p_avg_0_14",
+      "description_short": "P-scores using projected baseline for ages 0\u201314.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 0\u201314",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_avg_15_64": {
+      "title": "p_avg_15_64",
+      "description_short": "P-scores using projected baseline for ages 15\u201364",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 15\u201364",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_avg_65_74": {
+      "title": "p_avg_65_74",
+      "description_short": "P-scores using projected baseline for ages 65\u201374.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 65\u201374",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_avg_75_84": {
+      "title": "p_avg_75_84",
+      "description_short": "P-scores using projected baseline for ages 75\u201384.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 75\u201384",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_avg_85p": {
+      "title": "p_avg_85p",
+      "description_short": "P-scores using projected baseline for ages 85 and above.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 85+",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_avg_all_ages": {
+      "title": "p_avg_all_ages",
+      "description_short": "P-scores using 5-year average baseline for all ages.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Excess mortality P-scores, 5-year average baseline, all ages",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "projected_deaths_since_2020_all_ages": {
+      "title": "projected_deaths_since_2020_all_ages",
+      "description_short": "Projected number of weekly or monthly deaths from all causes for all ages for since 2020.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "name": "Projected, 2020",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_0_14": {
+      "title": "p_proj_0_14",
+      "description_short": "P-scores using projected baseline for ages 0\u201314.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 0\u201314",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_15_64": {
+      "title": "p_proj_15_64",
+      "description_short": "P-scores using projected baseline for ages 15\u201364.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 15\u201364",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_65_74": {
+      "title": "p_proj_65_74",
+      "description_short": "P-scores using projected baseline for ages 65\u201374.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 65\u201374",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_75_84": {
+      "title": "p_proj_75_84",
+      "description_short": "P-scores using projected baseline for ages 75\u201384.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 75\u201384",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_85p": {
+      "title": "p_proj_85p",
+      "description_short": "P-scores using projected baseline for ages 85 and above.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Ages 85+",
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "p_proj_all_ages": {
+      "title": "p_proj_all_ages",
+      "description_short": "P-scores using projected baseline for all ages",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Excess mortality P-scores, projected baseline, all ages.",
+        "includeInTable": true,
+        "tolerance": 30,
+        "numDecimalPlaces": 0
+      },
+      "presentation": {
+        "grapher_config": {
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "colorSchemeInvert": true,
+              "baseColorScheme": "RdYlBu",
+              "customNumericValues": [
+                -100,
+                -50,
+                -20,
+                -10,
+                0,
+                10,
+                20,
+                50,
+                100
+              ]
+            }
+          },
+          "title": "Excess mortality: Deaths from all causes compared to projection based on previous years",
+          "subtitle": "The percentage difference between the reported number of weekly or monthly deaths in 2020\u20132022 and the projected number of deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "hasMapTab": true
+        }
+      }
+    },
+    "excess_proj_all_ages": {
+      "title": "excess_proj_all_ages",
+      "description_short": "The number of excess deaths; calculated as reported deaths minus projected deaths.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "deaths_since_2020_all_ages": {
+      "title": "deaths_since_2020_all_ages",
+      "description_short": "Reported number of weekly or monthly deaths from all causes for all ages since 2020.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2010_all_ages": {
+      "title": "deaths_2010_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2010.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths"
+    },
+    "deaths_2011_all_ages": {
+      "title": "deaths_2011_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2011.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths"
+    },
+    "deaths_2012_all_ages": {
+      "title": "deaths_2012_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2012.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths"
+    },
+    "deaths_2013_all_ages": {
+      "title": "deaths_2013_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2013.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths"
+    },
+    "deaths_2014_all_ages": {
+      "title": "deaths_2014_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2014.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths"
+    },
+    "deaths_2015_all_ages": {
+      "title": "deaths_2015_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2015.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2016_all_ages": {
+      "title": "deaths_2016_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2016.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2017_all_ages": {
+      "title": "deaths_2017_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2017.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2018_all_ages": {
+      "title": "deaths_2018_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2018.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2019_all_ages": {
+      "title": "deaths_2019_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2019.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2020_all_ages": {
+      "title": "deaths_2020_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2020.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2021_all_ages": {
+      "title": "deaths_2021_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2021.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2022_all_ages": {
+      "title": "deaths_2022_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2022.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2023_all_ages": {
+      "title": "deaths_2023_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2023.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2024_all_ages": {
+      "title": "deaths_2024_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2024.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "deaths_2025_all_ages": {
+      "title": "deaths_2025_all_ages",
+      "description_short": "The reported number of weekly or monthly deaths from all causes for all ages in 2025.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "includeInTable": true,
+        "numDecimalPlaces": 0
+      }
+    },
+    "cum_excess_proj_all_ages": {
+      "title": "cum_excess_proj_all_ages",
+      "description_short": "The cumulative number of excess deaths; cumulated starting 1 January 2020.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "numDecimalPlaces": 0,
+        "includeInTable": true,
+        "tolerance": 30
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Excess mortality: Cumulative number of deaths from all causes compared to projection based on previous years",
+          "subtitle": "The cumulative difference between the reported number of deaths since 1 January 2020 and the projected number of deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "hasMapTab": true,
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericColors": [
+                "#9ECAE1",
+                "#ffffcc",
+                "#ffeda0",
+                "#fed976",
+                "#feb24c",
+                "#fd8d3c",
+                "#fc4e2a",
+                "#e31a1c",
+                "#bd0026",
+                "#800026"
+              ],
+              "customNumericValues": [
+                0,
+                100000,
+                200000,
+                300000,
+                400000,
+                500000,
+                600000,
+                700000,
+                800000,
+                900000
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cum_proj_deaths_all_ages": {
+      "title": "cum_proj_deaths_all_ages",
+      "description_short": "The cumulative number of projected deaths; cumulated starting 1 January 2020",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "cum_p_proj_all_ages": {
+      "title": "cum_p_proj_all_ages",
+      "description_short": "Cumulative P-scores using projected baseline for all ages.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "Excess mortality cumulative P-scores, projected baseline, all ages",
+        "numDecimalPlaces": 0,
+        "includeInTable": true,
+        "tolerance": 30
+      },
+      "presentation": {
+        "grapher_config": {
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "colorSchemeInvert": true,
+              "baseColorScheme": "RdYlBu",
+              "customNumericValues": [
+                -100,
+                -50,
+                -20,
+                -10,
+                0,
+                10,
+                20,
+                50,
+                100
+              ]
+            }
+          },
+          "title": "Excess mortality: Cumulative deaths from all causes compared to projection based on previous years",
+          "subtitle": "The percentage difference between the cumulative number of deaths since 1 January 2020 and the cumulative projected deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "hasMapTab": true
+        }
+      }
+    },
+    "excess_per_million_proj_all_ages": {
+      "title": "excess_per_million_proj_all_ages",
+      "description_short": "The number of excess deaths per million people in the population; calculated as reported deaths minus projected deaths.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "",
+      "display": {
+        "includeInTable": true
+      }
+    },
+    "cum_excess_per_million_proj_all_ages": {
+      "title": "cum_excess_per_million_proj_all_ages",
+      "description_short": "The cumulative number of excess deaths per million people in the population; cumulated starting 1 January 2020.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths per million people",
+      "display": {
+        "numDecimalPlaces": 0,
+        "includeInTable": true,
+        "tolerance": 30
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Excess mortality: Cumulative number of deaths from all causes compared to projection based on previous years, per million people",
+          "subtitle": "The cumulative difference between the reported number of deaths since 1 January 2020 and the projected number of deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericColors": [
+                "#9ECAE1",
+                "#ffffcc",
+                "#ffeda0",
+                "#fed976",
+                "#feb24c",
+                "#fd8d3c",
+                "#fc4e2a",
+                "#e31a1c",
+                "#bd0026",
+                "#800026"
+              ],
+              "customNumericValues": [
+                0,
+                1000,
+                2000,
+                3000,
+                4000,
+                5000,
+                6000,
+                7000,
+                8000,
+                9000
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cum_excess_proj_all_ages_last12m": {
+      "title": "cum_excess_proj_all_ages_last12m",
+      "description_short": "The cumulative number of excess deaths in the last 12 months.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths",
+      "display": {
+        "numDecimalPlaces": 0,
+        "includeInTable": true,
+        "tolerance": 30
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Excess mortality: Cumulative number of deaths from all causes compared to projection based on previous years",
+          "subtitle": "The cumulative difference between the reported number of deaths since 1 January 2020 and the projected number of deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "hasMapTab": true,
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericColors": [
+                "#9ECAE1",
+                "#ffffcc",
+                "#ffeda0",
+                "#fed976",
+                "#feb24c",
+                "#fd8d3c",
+                "#fc4e2a",
+                "#e31a1c",
+                "#bd0026",
+                "#800026"
+              ],
+              "customNumericValues": [
+                0,
+                100000,
+                200000,
+                300000,
+                400000,
+                500000,
+                600000,
+                700000,
+                800000,
+                900000
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cum_excess_per_million_proj_all_ages_last12m": {
+      "title": "cum_excess_per_million_proj_all_ages_last12m",
+      "description_short": "The cumulative number of excess deaths per million people in the population, in the last 12 months.",
+      "description_key": [
+        "Excess deaths is estimated as _Excess deaths = Number of reported deaths - Number of expected deaths_. Excess mortality goes beyond confirmed COVID-19 fatalities by capturing all deaths above a projected baseline, including indirect deaths from pandemic-related disruptions.",
+        "All-cause mortality data is from the Human Mortality Database (HMD) Short-term Mortality Fluctuations project and the World Mortality Dataset (WMD). Both sources are updated weekly.",
+        "We use the baseline estimates by [Ariel Karlinsky and Dmitry Kobak (2021)](https://elifesciences.org/articles/69336) as part of their World Mortality Dataset (WMD).",
+        "We do not use the data from some countries in WMD because they fail to meet the following data quality criteria: 1) at least three years of historical data; and 2) data published either weekly or monthly. The full list of excluded countries and reasons for exclusion can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JPMtzsx-smO3_K4ReK_HMeuVLEzVZ71qHghSuAfG788/edit?usp=sharing)."
+      ],
+      "origins": [
+        {
+          "producer": "Human Mortality Database",
+          "title": "Human Mortality Database",
+          "citation_full": "HMD. Human Mortality Database. Max Planck Institute for Demographic Research (Germany), University of California, Berkeley (USA), and French Institute for Demographic Studies (France). Available at www.mortality.org.",
+          "url_main": "https://www.mortality.org",
+          "date_accessed": "2024-08-20",
+          "date_published": "2025",
+          "license": {
+            "name": "Creative Commons BY 4.0",
+            "url": "https://www.mortality.org/Data/UserAgreement"
+          }
+        },
+        {
+          "producer": "World Mortality Database",
+          "title": "World Mortality Database",
+          "citation_full": "Karlinsky & Kobak 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset, eLife https://doi.org/10.7554/eLife.69336",
+          "url_main": "https://github.com/akarlinsky/world_mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "MIT License",
+            "url": "https://github.com/akarlinsky/world_mortality/blob/main/LICENSE"
+          }
+        },
+        {
+          "producer": "Karlinsky & Kobak",
+          "title": "Excess mortality during the COVID-19 pandemic",
+          "citation_full": "Karlinsky & Kobak, 2021, Tracking excess mortality across countries during the COVID-19 pandemic with the World Mortality Dataset. eLife 10:e69336. https://elifesciences.org/articles/69336.",
+          "url_main": "https://github.com/dkobak/excess-mortality",
+          "date_accessed": "2024-08-20",
+          "date_published": "2024",
+          "license": {
+            "name": "GPL-3.0",
+            "url": "https://github.com/dkobak/excess-mortality/blob/main/LICENSE"
+          }
+        }
+      ],
+      "unit": "deaths per million people",
+      "display": {
+        "numDecimalPlaces": 0,
+        "includeInTable": true,
+        "tolerance": 30
+      },
+      "presentation": {
+        "grapher_config": {
+          "title": "Excess mortality: Cumulative number of deaths from all causes compared to projection based on previous years, per million people",
+          "subtitle": "The cumulative difference between the reported number of deaths since 1 January 2020 and the projected number of deaths for the same period based on previous years. The reported number might not count all deaths that occurred due to incomplete coverage and delays in reporting.",
+          "hasMapTab": true,
+          "map": {
+            "colorScale": {
+              "customNumericColorsActive": true,
+              "binningStrategy": "manual",
+              "customNumericColors": [
+                "#9ECAE1",
+                "#ffffcc",
+                "#ffeda0",
+                "#fed976",
+                "#feb24c",
+                "#fd8d3c",
+                "#fc4e2a",
+                "#e31a1c",
+                "#bd0026",
+                "#800026"
+              ],
+              "customNumericValues": [
+                0,
+                1000,
+                2000,
+                3000,
+                4000,
+                5000,
+                6000,
+                7000,
+                8000,
+                9000
+              ]
+            }
+          }
+        }
+      },
+      "sources": [
+        {
+          "name": "Human Mortality Database"
+        },
+        {
+          "name": "World Mortality Dataset (2024)"
+        },
+        {
+          "name": "Karlinsky and Kobak (2021)"
+        }
+      ]
+    }
+  }
+}

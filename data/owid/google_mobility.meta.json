@@ -1,0 +1,117 @@
+{
+  "short_name": "google_mobility",
+  "title": "COVID-19, Community Mobility Reports",
+  "description": "As global communities responded to COVID-19, we heard from public health officials that the same type of aggregated, anonymized insights we use in products such as Google Maps would be helpful as they made critical decisions to combat COVID-19.\n\nThese Community Mobility Reports aimed to provide insights into what changed in response to policies aimed at combating COVID-19. The reports charted movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+  "dataset": {
+    "channel": "garden",
+    "namespace": "covid",
+    "short_name": "google_mobility",
+    "title": "COVID-19, Community Mobility Reports",
+    "description": "As global communities responded to COVID-19, we heard from public health officials that the same type of aggregated, anonymized insights we use in products such as Google Maps would be helpful as they made critical decisions to combat COVID-19.\n\nThese Community Mobility Reports aimed to provide insights into what changed in response to policies aimed at combating COVID-19. The reports charted movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+    "is_public": true,
+    "version": "latest",
+    "update_period_days": 0,
+    "non_redistributable": false,
+    "source_checksum": "7ef371f02bce0c4a6f984033f5943296"
+  },
+  "primary_key": [
+    "country",
+    "date",
+    "place"
+  ],
+  "dimensions": [
+    {
+      "name": "country",
+      "slug": "country"
+    },
+    {
+      "name": "date",
+      "slug": "date"
+    },
+    {
+      "name": "place",
+      "slug": "place"
+    }
+  ],
+  "fields": {
+    "country": {
+      "origins": [
+        {
+          "producer": "Google",
+          "title": "COVID-19, Community Mobility Reports",
+          "description": "As global communities responded to COVID-19, we heard from public health officials that the same type of aggregated, anonymized insights we use in products such as Google Maps would be helpful as they made critical decisions to combat COVID-19.\n\nThese Community Mobility Reports aimed to provide insights into what changed in response to policies aimed at combating COVID-19. The reports charted movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+          "citation_full": "Google LLC \"Google COVID-19 Community Mobility Reports\".\nhttps://www.google.com/covid19/mobility/ Accessed: 2024-07-31.",
+          "url_main": "https://www.google.com/covid19/mobility/",
+          "url_download": "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv",
+          "date_accessed": "2024-07-31",
+          "date_published": "2022-10-15",
+          "license": {
+            "name": "Google term of service",
+            "url": "https://policies.google.com/terms"
+          }
+        }
+      ]
+    },
+    "date": {},
+    "place": {
+      "origins": [
+        {
+          "producer": "Google",
+          "title": "COVID-19, Community Mobility Reports",
+          "description": "As global communities responded to COVID-19, we heard from public health officials that the same type of aggregated, anonymized insights we use in products such as Google Maps would be helpful as they made critical decisions to combat COVID-19.\n\nThese Community Mobility Reports aimed to provide insights into what changed in response to policies aimed at combating COVID-19. The reports charted movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+          "citation_full": "Google LLC \"Google COVID-19 Community Mobility Reports\".\nhttps://www.google.com/covid19/mobility/ Accessed: 2024-07-31.",
+          "url_main": "https://www.google.com/covid19/mobility/",
+          "url_download": "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv",
+          "date_accessed": "2024-07-31",
+          "date_published": "2022-10-15",
+          "license": {
+            "name": "Google term of service",
+            "url": "https://policies.google.com/terms"
+          }
+        }
+      ]
+    },
+    "trend": {
+      "title": "Trend - Place: << place >>",
+      "description_short": "<%- if place == 'Grocery and pharmacy' -%>\nMobility trends for places like grocery markets, food warehouses, farmers markets, specialty food shops, drug stores, and pharmacies.\n<%- elif place == 'Parks' -%>\nMobility trends for places like local parks, national parks, public beaches, marinas, dog parks, plazas, and public gardens.\n<%- elif place == 'Transit stations' -%>\nMobility trends for places like public transport hubs such as subway, bus, and train stations.\n<%- elif place == 'Retail and recreation' -%>\nMobility trends for places like restaurants, cafes, shopping centers, theme parks, museums, libraries, and movie theaters.\n<%- elif place == 'Residential' -%>\nMobility trends for places of residence.\n<%- elif place == 'Workplaces' -%>\nMobility trends for places of work.\n<%- endif -%>",
+      "description_key": [
+        "These datasets show how visits and length of stay at different places change compared to a baseline. Google calculates these changes using the same kind of aggregated and anonymized data used to show popular times for places in Google Maps.",
+        "Changes for each day are compared to a baseline value for that day of the week:\n\n- The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3\u2013Feb 6, 2020.\n- The datasets show trends over several months with the most recent data representing approximately 2-3 days ago\u2014this is how long it takes to produce the datasets.",
+        "What data is included in the calculation depends on user settings, connectivity, and whether it meets our privacy threshold. When the data doesn't meet quality and privacy thresholds, you might see empty fields for certain places and dates.",
+        "Google includes categories that are useful to social distancing efforts as well as access to essential services.",
+        "Google calculates these insights based on data from users who have opted-in to Location History for their Google Account, so the data represents a sample of our users. As with all samples, this may or may not represent the exact behavior of a wider population."
+      ],
+      "origins": [
+        {
+          "producer": "Google",
+          "title": "COVID-19, Community Mobility Reports",
+          "description": "As global communities responded to COVID-19, we heard from public health officials that the same type of aggregated, anonymized insights we use in products such as Google Maps would be helpful as they made critical decisions to combat COVID-19.\n\nThese Community Mobility Reports aimed to provide insights into what changed in response to policies aimed at combating COVID-19. The reports charted movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+          "citation_full": "Google LLC \"Google COVID-19 Community Mobility Reports\".\nhttps://www.google.com/covid19/mobility/ Accessed: 2024-07-31.",
+          "url_main": "https://www.google.com/covid19/mobility/",
+          "url_download": "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv",
+          "date_accessed": "2024-07-31",
+          "date_published": "2022-10-15",
+          "license": {
+            "name": "Google term of service",
+            "url": "https://policies.google.com/terms"
+          }
+        }
+      ],
+      "unit": "%",
+      "short_unit": "%",
+      "display": {
+        "name": "<< place >>"
+      },
+      "processing_level": "minor",
+      "presentation": {
+        "grapher_config": {
+          "title": "<< place >>: How did the number of visitors change relative to before the pandemic?"
+        },
+        "topic_tags": [
+          "COVID-19"
+        ]
+      },
+      "description_processing": "This indicator has been smoothed by averaging its values with a centered 7-day rolling window."
+    }
+  }
+}
