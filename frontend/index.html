@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EpiSentinel &mdash; Predictive Outbreak Intelligence</title>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #f0f4f8;
+      --surface: #ffffff;
+      --card:    #f8fafc;
+      --border:  #e2e8f0;
+      --border2: #cbd5e1;
+      --text:    #0f172a;
+      --muted:   #64748b;
+      --accent:  #ea580c;
+      --blue:    #2563eb;
+      --green:   #15803d;
+      --red:     #dc2626;
+      --orange:  #d97706;
+      --purple:  #7c3aed;
+    }
+
+    html { font-size: 14px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+    .label {
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .hidden { display: none !important; }
+
+    /* ---- header ---- */
+    #header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, #ea580c, #7c3aed);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; font-weight: 800; color: #fff;
+    }
+    .logo-name { font-size: 16px; font-weight: 800; color: var(--text); }
+    .logo-sub  { font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .badges    { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; border: 1px solid;
+      white-space: nowrap;
+    }
+    .badge-connecting { background: #fff7ed; border-color: #fdba74; color: #c2410c; }
+    .badge-online     { background: #f0fdf4; border-color: #86efac; color: #15803d; }
+    .badge-offline    { background: #fef2f2; border-color: #fca5a5; color: #dc2626; }
+    .badge-model      { background: #f0fdf4; border-color: #86efac; color: #15803d; }
+    .badge-time       { background: var(--card); border-color: var(--border2); color: var(--muted); }
+
+    /* ---- app container ---- */
+    #app { max-width: 1600px; margin: 0 auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 16px; }
+
+    /* ---- stat bar ---- */
+    #stat-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .stat-card .val { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .stat-card .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .v-blue   { color: var(--blue); }
+    .v-red    { color: var(--red); }
+    .v-accent { color: var(--accent); }
+    .v-green  { color: var(--green); }
+    .v-orange { color: var(--orange); }
+    .v-muted  { color: var(--muted); }
+
+    /* ---- panels ---- */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .panel-hd {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .panel-hd .sub { color: var(--muted); font-weight: 400; font-size: 11px; }
+
+    /* ---- layouts ---- */
+    #main-grid   { display: grid; grid-template-columns: 1fr 310px; gap: 16px; }
+    #left-col    { display: flex; flex-direction: column; gap: 16px; }
+    #right-col   { display: flex; flex-direction: column; gap: 16px; }
+    #bottom-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .span2       { grid-column: span 2; }
+
+    /* ---- buttons ---- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px; padding: 8px 16px; font-size: 13px;
+      font-weight: 600; cursor: pointer; border: 1px solid;
+      transition: all 0.15s; font-family: inherit; gap: 5px;
+    }
+    .btn-primary { background: #fff7ed; border-color: #fdba74; color: var(--accent); }
+    .btn-primary:hover { background: #ffedd5; border-color: var(--accent); }
+    .btn-green   { background: #f0fdf4; border-color: #86efac; color: var(--green); }
+    .btn-green:hover   { background: #dcfce7; border-color: var(--green); }
+    .btn-ghost   { background: transparent; border-color: var(--border2); color: var(--muted); }
+    .btn-ghost:hover   { border-color: var(--text); color: var(--text); }
+    .btn-sm      { padding: 5px 10px; font-size: 11px; border-radius: 6px; }
+    .btn-full    { width: 100%; }
+    .hist-nav    { display: flex; gap: 4px; }
+
+    /* ---- form controls ---- */
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-label { font-size: 12px; font-weight: 500; color: var(--text); }
+    .form-label .hint { color: var(--muted); font-size: 11px; }
+    select {
+      width: 100%; background: var(--card); color: var(--text);
+      border: 1px solid var(--border2); border-radius: 8px;
+      padding: 8px 32px 8px 12px; font-size: 13px; font-family: inherit;
+      appearance: none; -webkit-appearance: none; outline: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+      cursor: pointer; transition: border-color 0.15s;
+    }
+    select:focus { border-color: var(--accent); }
+    select option { background: #fff; color: var(--text); }
+    input[type="range"] {
+      width: 100%; height: 5px; border-radius: 4px; outline: none;
+      border: none; padding: 0; cursor: pointer;
+      background: var(--border2); appearance: none; -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 15px; height: 15px; border-radius: 50%;
+      background: var(--accent); cursor: pointer;
+      border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    #sc-vax::-webkit-slider-thumb         { background: var(--green); }
+    #sc-stringency::-webkit-slider-thumb  { background: var(--blue); }
+
+    /* ---- risk panel ---- */
+    #risk-info {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px;
+    }
+    .risk-num-big {
+      font-size: 44px; font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1; margin: 6px 0 4px;
+    }
+    .risk-pill {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-low      { background: #dcfce7; color: #15803d; }
+    .pill-medium   { background: #fef3c7; color: #b45309; }
+    .pill-high     { background: #ffedd5; color: #c2410c; }
+    .pill-critical { background: #fee2e2; color: #b91c1c; }
+    .risk-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .risk-meta-card { background: var(--surface); border-radius: 8px; padding: 10px; border: 1px solid var(--border); }
+    .risk-meta-card .val { font-size: 18px; font-weight: 700; color: var(--blue); }
+
+    /* ---- divider ---- */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
+
+    /* ---- risk rows ---- */
+    .risk-row {
+      display: flex; align-items: center;
+      padding: 9px 11px; border-radius: 8px;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.12s; margin-bottom: 5px;
+      background: var(--card);
+    }
+    .risk-row:hover { border-color: var(--border2); background: #f1f5f9; }
+    .risk-row:last-child { margin-bottom: 0; }
+    .risk-num  { font-size: 11px; color: var(--muted); width: 18px; flex-shrink: 0; }
+    .risk-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .risk-sub  { font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .risk-pct  { font-size: 13px; font-weight: 700; flex-shrink: 0; text-align: right; }
+    .risk-pct .lvl { display: block; font-size: 10px; font-weight: 400; color: var(--muted); }
+
+    /* ---- scenario ---- */
+    .scenario-result {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px; margin-top: 12px; text-align: center;
+    }
+    .scenario-result .big {
+      font-size: 34px; font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ---- spinner ---- */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid var(--border2); border-top-color: var(--accent);
+      animation: spin 0.7s linear infinite; display: inline-block;
+    }
+    .loading-box {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; color: var(--muted); font-size: 13px;
+    }
+
+    /* ---- color classes ---- */
+    .c-low      { color: var(--green); }
+    .c-medium   { color: var(--orange); }
+    .c-high     { color: var(--accent); }
+    .c-critical { color: var(--red); }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ---- forecast hint ---- */
+    .forecast-hint {
+      font-size: 11px; color: var(--muted); margin-top: 4px;
+      padding: 4px 8px; background: #fef3c7; border-radius: 6px;
+      border: 1px solid #fde68a; display: none;
+    }
+
+    /* ---- responsive ---- */
+    @media (max-width: 1200px) {
+      #stat-bar    { grid-template-columns: repeat(3, 1fr); }
+      #main-grid   { grid-template-columns: 1fr; }
+      #bottom-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      #stat-bar    { grid-template-columns: repeat(2, 1fr); }
+      #bottom-grid { grid-template-columns: 1fr; }
+      #app         { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="logo">
+      <div class="logo-icon">E</div>
+      <div>
+        <div class="logo-name">EpiSentinel</div>
+        <div class="logo-sub">Predictive Outbreak Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span id="api-status" class="badge badge-connecting">Connecting&hellip;</span>
+      <span class="badge badge-model">Neural ODE &#10003;</span>
+      <span class="badge badge-model">Temporal GAT &#10003;</span>
+      <span id="last-update" class="badge badge-time">&mdash;</span>
+    </div>
+  </header>
+
+  <!-- ===== APP ===== -->
+  <div id="app">
+
+    <!-- STAT BAR -->
+    <div id="stat-bar">
+      <div class="stat-card">
+        <div class="label">Countries Tracked</div>
+        <div id="stat-countries" class="val v-blue">&#8212;</div>
+        <div class="sub">Global coverage</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">High / Critical</div>
+        <div id="stat-high-risk" class="val v-red">&#8212;</div>
+        <div class="sub">Countries at risk</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Selected Region</div>
+        <div id="stat-region" class="val v-accent">&#8212;</div>
+        <div id="stat-horizon" class="sub">Horizon: 28d</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Data Points</div>
+        <div class="val v-blue">229K</div>
+        <div class="sub">JHU + OWID + Mobility</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Neural ODE MAE</div>
+        <div class="val v-green mono">3019</div>
+        <div class="sub">SEIR Physics model</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Temporal GAT MAE</div>
+        <div class="val v-green mono">2208</div>
+        <div class="sub">Graph Attention Net</div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div id="main-grid">
+
+      <!-- LEFT COLUMN -->
+      <div id="left-col">
+
+        <!-- Risk Map -->
+        <div class="panel">
+          <div class="panel-hd">
+            Global Outbreak Risk Map
+            <div style="display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted);">
+              <span><span class="dot" style="background:var(--green)"></span> Low</span>
+              <span><span class="dot" style="background:var(--orange)"></span> Medium</span>
+              <span><span class="dot" style="background:var(--accent)"></span> High</span>
+              <span><span class="dot" style="background:var(--red)"></span> Critical</span>
+            </div>
+          </div>
+          <div id="risk-map" style="width:100%;height:410px;border-radius:8px;"></div>
+        </div>
+
+        <!-- Forecast Chart -->
+        <div class="panel">
+          <div class="panel-hd">
+            <span>
+              Case Trajectory &amp; Forecast
+              &mdash; <span id="chart-title" style="color:var(--accent);font-weight:700;">India</span>
+              <span id="forecast-loading-hint" style="font-size:11px;color:var(--orange);font-weight:400;margin-left:8px;display:none;">
+                (forecast loading&hellip;)
+              </span>
+            </span>
+            <div class="hist-nav">
+              <button class="btn btn-ghost btn-sm" onclick="setHistLen(90)">90d</button>
+              <button class="btn btn-ghost btn-sm" onclick="setHistLen(180)">180d</button>
+              <button class="btn btn-ghost btn-sm" onclick="setHistLen(365)">1yr</button>
+              <button class="btn btn-ghost btn-sm" onclick="setHistLen(0)">All</button>
+            </div>
+          </div>
+          <div id="forecast-chart" style="width:100%;height:300px;">
+            <div class="loading-box" style="height:300px;">Select a country to view case trajectory</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div id="right-col">
+
+        <!-- Region Inspector -->
+        <div class="panel">
+          <div class="panel-hd">Region Inspector <span class="sub">Select &amp; Analyse</span></div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+
+            <div class="form-group">
+              <label class="form-label" for="country-select">Country</label>
+              <select id="country-select"><option>India</option></select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Forecast Horizon &mdash;
+                <span id="horizon-val" style="color:var(--accent);font-weight:700;" class="hint">28 days</span>
+              </label>
+              <input id="horizon-input" type="range" min="7" max="60" value="28"
+                oninput="document.getElementById('horizon-val').textContent=this.value+' days';
+                         document.getElementById('stat-horizon').textContent='Horizon: '+this.value+'d'" />
+              <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:2px;">
+                <span>7</span><span>60 days</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" onclick="runForecast()">&#9654; Run Forecast</button>
+          </div>
+
+          <!-- Risk Panel -->
+          <div id="risk-info" style="margin-top:14px;">
+            <div class="label" style="margin-bottom:6px;">Outbreak Risk</div>
+            <div id="risk-score" class="risk-num-big v-muted">&mdash;</div>
+            <div style="margin-top:6px;display:flex;align-items:center;gap:8px;">
+              <span id="risk-pill" class="risk-pill pill-medium" style="display:none;">&mdash;</span>
+              <span id="risk-level-label" style="font-size:12px;color:var(--muted);">Load a country to see risk</span>
+            </div>
+            <hr class="divider" />
+            <div class="risk-meta">
+              <div class="risk-meta-card">
+                <div class="label">Vaccination</div>
+                <div id="rf-vax" class="val" style="font-size:18px;color:var(--green);">&mdash;</div>
+              </div>
+              <div class="risk-meta-card">
+                <div class="label">Stringency</div>
+                <div id="rf-str" class="val" style="font-size:18px;color:var(--blue);">&mdash;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Risk Countries -->
+        <div class="panel" style="flex:1;overflow:hidden;">
+          <div class="panel-hd">Top Risk Countries <span class="sub">Click to inspect</span></div>
+          <div id="top-risks">
+            <div class="loading-box" style="height:60px;"><span class="spinner"></span> Loading&hellip;</div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /main-grid -->
+
+    <!-- BOTTOM GRID -->
+    <div id="bottom-grid">
+
+      <!-- Scenario Sandbox (spans 2 cols) -->
+      <div class="panel span2">
+        <div class="panel-hd">Scenario Sandbox <span class="sub">Counterfactual Intervention Analysis</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start;">
+
+          <div class="form-group">
+            <label class="form-label">
+              Mobility Reduction &mdash;
+              <span id="mob-val" style="color:var(--accent);font-weight:700;">50%</span>
+            </label>
+            <input id="sc-mobility" type="range" min="0" max="100" value="50"
+              oninput="document.getElementById('mob-val').textContent=this.value+'%'" />
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:3px;">
+              <span>None</span><span>Full lockdown</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Vaccination Acceleration &mdash;
+              <span id="vax-val" style="color:var(--green);font-weight:700;">0%</span>
+            </label>
+            <input id="sc-vax" type="range" min="0" max="100" value="0"
+              oninput="document.getElementById('vax-val').textContent=this.value+'%'" />
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:3px;">
+              <span>Baseline</span><span>Max rollout</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Policy Stringency &mdash;
+              <span id="str-val" style="color:var(--blue);font-weight:700;">50%</span>
+            </label>
+            <input id="sc-stringency" type="range" min="0" max="100" value="50"
+              oninput="document.getElementById('str-val').textContent=this.value+'%'" />
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:3px;">
+              <span>Relaxed</span><span>Strict</span>
+            </div>
+          </div>
+
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;">
+          <button class="btn btn-ghost" onclick="resetScenario()" style="flex:1;">&#8634; Reset</button>
+          <button class="btn btn-green" onclick="runScenario()" style="flex:2;">
+            &#9654; Run Scenario for <span id="sc-country-label">India</span>
+          </button>
+        </div>
+        <div id="scenario-result" class="hidden scenario-result"></div>
+      </div>
+
+      <!-- Risk Factor Drivers -->
+      <div class="panel">
+        <div class="panel-hd">
+          Risk Factor Drivers
+          <span class="sub" id="drivers-caption">Select a country</span>
+        </div>
+        <div id="drivers-chart" style="height:220px;">
+          <div class="loading-box" style="height:220px;color:var(--muted);font-size:12px;">
+            Load a country to see attribution
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /bottom-grid -->
+
+  </div><!-- /#app -->
+
+  <script>
+    const API = "http://127.0.0.1:8000/api/v1";
+    let _histLen = 180;
+    let _forecastData = null;
+    let _histData = null;
+    let _riskMapData = null;
+    let _selectedCountry = "India";
+    let _reqId = 0;          // race-condition guard
+    let _chartHasData = false; // true once forecast-chart has a Plotly instance
+
+    /* ---- Plotly theme (light) -------------------------------------------- */
+    const pLayout = (extra = {}) => ({
+      paper_bgcolor: "transparent",
+      plot_bgcolor:  "#ffffff",
+      font: { color: "#475569", family: "Inter, sans-serif", size: 11 },
+      margin: { l: 55, r: 20, t: 20, b: 40 },
+      xaxis: {
+        gridcolor: "rgba(0,0,0,0.06)", linecolor: "#e2e8f0",
+        tickfont: { size: 10, color: "#64748b" }
+      },
+      yaxis: {
+        gridcolor: "rgba(0,0,0,0.06)", linecolor: "#e2e8f0",
+        tickfont: { size: 10, color: "#64748b" }
+      },
+      legend: {
+        bgcolor: "rgba(255,255,255,0.9)", bordercolor: "#e2e8f0",
+        borderwidth: 1, font: { size: 11 }
+      },
+      ...extra,
+    });
+    const pConfig = { displayModeBar: false, responsive: true };
+
+    const RISK_COLORS = { low: "#15803d", medium: "#d97706", high: "#ea580c", critical: "#dc2626" };
+    const RISK_PILL   = { low: "pill-low", medium: "pill-medium", high: "pill-high", critical: "pill-critical" };
+    const RISK_CLASS  = { low: "c-low", medium: "c-medium", high: "c-high", critical: "c-critical" };
+
+    function riskColor(level) { return RISK_COLORS[level] || "#64748b"; }
+    function setHistLen(n) { _histLen = n; renderForecastChart(); }
+
+    /* ---- API helpers ------------------------------------------------------ */
+    async function checkHealth() {
+      const el = document.getElementById("api-status");
+      try {
+        const r = await fetch(`${API}/health`);
+        if (r.ok) {
+          el.textContent = "API Online";
+          el.className = "badge badge-online";
+          document.getElementById("last-update").textContent = new Date().toLocaleTimeString();
+        } else throw new Error();
+      } catch {
+        el.textContent = "API Offline";
+        el.className = "badge badge-offline";
+      }
+    }
+
+    async function loadCountries() {
+      try {
+        const d = await fetch(`${API}/data/countries`).then(r => r.json());
+        const sel = document.getElementById("country-select");
+        sel.innerHTML = d.countries
+          .map(c => `<option value="${c}"${c === "India" ? " selected" : ""}>${c}</option>`)
+          .join("");
+        document.getElementById("stat-countries").textContent = d.countries.length;
+      } catch (e) { console.warn("loadCountries", e); }
+    }
+
+    async function loadRiskMap() {
+      try {
+        const d = await fetch(`${API}/data/risk-map`).then(r => r.json());
+        _riskMapData = d.countries;
+        renderRiskMap();
+        renderTopRisks();
+        document.getElementById("stat-high-risk").textContent =
+          d.countries.filter(c => c.risk_level === "high" || c.risk_level === "critical").length;
+      } catch (e) { console.warn("loadRiskMap", e); }
+    }
+
+    async function loadTimeseries(country) {
+      const d = await fetch(`${API}/data/timeseries?country=${encodeURIComponent(country)}`).then(r => r.json());
+      return d.rows || [];
+    }
+
+    async function loadForecast(country, horizon) {
+      const d = await fetch(`${API}/predict/forecast?country=${encodeURIComponent(country)}&horizon=${horizon}`).then(r => r.json());
+      return d.forecasts && d.forecasts[0] ? d.forecasts[0] : null;
+    }
+
+    async function loadRisk(country) {
+      const d = await fetch(`${API}/predict/outbreak-risk?country=${encodeURIComponent(country)}`).then(r => r.json());
+      return d.risks && d.risks[0] ? d.risks[0] : null;
+    }
+
+    /* ---- render: choropleth ---------------------------------------------- */
+    function renderRiskMap() {
+      if (!_riskMapData) return;
+      const texts = _riskMapData.map(c =>
+        "<b>" + c.country + "</b><br>" +
+        "Risk: <b>" + (c.risk_score * 100).toFixed(1) + "%</b> (" + c.risk_level.toUpperCase() + ")<br>" +
+        "7d avg cases: " + (c.rolling_7d || c.daily_cases || 0).toLocaleString() + "<br>" +
+        "Vaccination: " + c.vax_coverage + "% &middot; Stringency: " + c.stringency + "%"
+      );
+
+      const trace = {
+        type: "choropleth", locationmode: "country names",
+        locations: _riskMapData.map(c => c.country),
+        z: _riskMapData.map(c => c.risk_score),
+        text: texts, hoverinfo: "text",
+        colorscale: [
+          [0.00, "#dcfce7"],
+          [0.30, "#86efac"],
+          [0.55, "#fde68a"],
+          [0.75, "#fdba74"],
+          [1.00, "#fca5a5"],
+        ],
+        zmin: 0, zmax: 1,
+        showscale: true,
+        colorbar: {
+          title: { text: "Risk", font: { color: "#64748b", size: 11 } },
+          tickfont: { color: "#64748b", size: 10 },
+          thickness: 12, len: 0.65,
+          bgcolor: "rgba(255,255,255,0.9)",
+          bordercolor: "#e2e8f0",
+        },
+        marker: { line: { color: "rgba(0,0,0,0.1)", width: 0.5 } },
+      };
+
+      Plotly.newPlot("risk-map", [trace], {
+        geo: {
+          showframe: false, showcoastlines: true,
+          coastlinecolor: "rgba(0,0,0,0.15)",
+          showland: true, landcolor: "#f1f5f9",
+          showocean: true, oceancolor: "#dde8f0",
+          showcountries: true, countrycolor: "rgba(0,0,0,0.1)",
+          projection: { type: "natural earth" },
+          bgcolor: "transparent",
+        },
+        paper_bgcolor: "transparent",
+        font: { color: "#64748b" },
+        margin: { l: 0, r: 0, t: 0, b: 0 },
+      }, { ...pConfig, scrollZoom: false });
+
+      document.getElementById("risk-map").on("plotly_click", data => {
+        const c = data.points[0] && data.points[0].location;
+        if (c) selectCountry(c);
+      });
+    }
+
+    /* ---- render: forecast chart ------------------------------------------ */
+    function drawHistoryChart() {
+      // Phase 1: draw only the historical line — fast newPlot, no forecast traces yet
+      if (!_histData || _histData.length === 0) return;
+      const hist = _histLen > 0 ? _histData.slice(-_histLen) : _histData;
+      const hDates = hist.map(r => r.date);
+      const hCases = hist.map(r => Math.max(r.daily_new_cases != null ? r.daily_new_cases : (r.confirmed_cases || 0), 0));
+
+      const fcEl = document.getElementById("forecast-chart");
+      fcEl.innerHTML = ""; // clear spinner before Plotly renders
+      Plotly.newPlot("forecast-chart", [{
+        name: "Historical Cases",
+        x: hDates, y: hCases,
+        type: "scatter", mode: "lines",
+        line: { color: "#2563eb", width: 1.8 },
+        fill: "tozeroy", fillcolor: "rgba(37,99,235,0.06)",
+        hovertemplate: "<b>%{x}</b><br>%{y:,.0f} cases<extra></extra>",
+      }], pLayout(), pConfig);
+      _chartHasData = true;
+    }
+
+    function addForecastTraces() {
+      // Phase 2: silently ADD forecast traces to the existing chart — no re-render, no spinner
+      if (!_forecastData || !_chartHasData) return;
+      const fd = _forecastData.dates;
+      const fc = _forecastData.predicted_cases;
+      const fl = _forecastData.ci_lower;
+      const fu = _forecastData.ci_upper;
+
+      Plotly.addTraces("forecast-chart", [
+        {
+          name: "95% CI",
+          x: fd.concat(fd.slice().reverse()),
+          y: fu.concat(fl.slice().reverse()),
+          type: "scatter", mode: "none",
+          fill: "toself", fillcolor: "rgba(234,88,12,0.08)",
+          showlegend: false, hoverinfo: "skip",
+        },
+        {
+          name: "EpiSentinel Forecast",
+          x: fd, y: fc,
+          type: "scatter", mode: "lines+markers",
+          line: { color: "#ea580c", width: 2.5, dash: "dot" },
+          marker: { size: 4, color: "#ea580c" },
+          hovertemplate: "<b>%{x}</b><br>Forecast: %{y:,.0f}<extra></extra>",
+        },
+      ]);
+    }
+
+    // kept for setHistLen (90d/180d/1yr/All buttons) — re-slices history and re-adds forecast
+    function renderForecastChart() {
+      drawHistoryChart();
+      if (_forecastData) addForecastTraces();
+    }
+
+    /* ---- render: top risk list ------------------------------------------- */
+    function renderTopRisks() {
+      if (!_riskMapData) return;
+      const sorted = _riskMapData.slice().sort((a, b) => b.risk_score - a.risk_score).slice(0, 10);
+      document.getElementById("top-risks").innerHTML = sorted.map((c, i) => {
+        const safeCountry = c.country.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+        return (
+          '<div class="risk-row" onclick="selectCountry(\'' + safeCountry + '\')">' +
+            '<span class="risk-num">' + (i + 1) + '</span>' +
+            '<div style="flex:1;min-width:0;margin:0 10px;">' +
+              '<div class="risk-name">' + c.country + '</div>' +
+              '<div class="risk-sub">' + (c.rolling_7d || c.daily_cases || 0).toLocaleString() + ' cases/day avg</div>' +
+            '</div>' +
+            '<span class="risk-pct" style="color:' + riskColor(c.risk_level) + ';">' +
+              (c.risk_score * 100).toFixed(0) + '%' +
+              '<span class="lvl">' + c.risk_level + '</span>' +
+            '</span>' +
+          '</div>'
+        );
+      }).join("");
+    }
+
+    /* ---- render: risk drivers -------------------------------------------- */
+    function renderDrivers(riskData) {
+      const el = document.getElementById("drivers-chart");
+      if (!riskData || !riskData.contributing_factors) {
+        el.innerHTML = '<div class="loading-box" style="height:220px;font-size:12px;">No factor data available</div>';
+        return;
+      }
+      const facs = riskData.contributing_factors;
+      const labels = Object.keys(facs).map(k => k.replace(/_/g, " "));
+      const values = Object.values(facs);
+
+      el.innerHTML = ""; // clear spinner before Plotly renders
+      Plotly.newPlot("drivers-chart", [{
+        type: "bar", orientation: "h",
+        x: values, y: labels,
+        marker: { color: values.map(v => v > 0 ? "#ea580c" : "#15803d") },
+        text: values.map(v => (v > 0 ? "+" : "") + v.toFixed(3)),
+        textposition: "outside",
+        textfont: { color: "#475569", size: 10 },
+        hovertemplate: "<b>%{y}</b>: %{x:.3f}<extra></extra>",
+      }], Object.assign({}, pLayout({ margin: { l: 120, r: 55, t: 10, b: 20 } }), {
+        xaxis: Object.assign({}, pLayout().xaxis, {
+          zeroline: true, zerolinecolor: "#e2e8f0", zerolinewidth: 1.5,
+        }),
+      }), pConfig);
+
+      document.getElementById("drivers-caption").textContent = _selectedCountry;
+    }
+
+    /* ---- actions --------------------------------------------------------- */
+    function updateRiskPanel(prob, level, vax, str) {
+      const scoreEl = document.getElementById("risk-score");
+      scoreEl.textContent = (prob * 100).toFixed(1) + "%";
+      scoreEl.className = "risk-num-big " + (RISK_CLASS[level] || "v-muted");
+
+      const pill = document.getElementById("risk-pill");
+      pill.style.display = "inline-block";
+      pill.textContent = level.toUpperCase();
+      pill.className = "risk-pill " + (RISK_PILL[level] || "pill-medium");
+
+      document.getElementById("risk-level-label").textContent = "";
+      document.getElementById("rf-vax").textContent = vax != null ? vax + "%" : "—";
+      document.getElementById("rf-str").textContent = str != null ? str + "%" : "—";
+    }
+
+    async function selectCountry(country) {
+      _selectedCountry = country;
+      document.getElementById("country-select").value = country;
+      const short = country.length > 10 ? country.slice(0, 10) + "..." : country;
+      document.getElementById("stat-region").textContent = short;
+      document.getElementById("chart-title").textContent = country;
+      document.getElementById("sc-country-label").textContent = country;
+
+      if (_riskMapData) {
+        const item = _riskMapData.find(c => c.country === country);
+        if (item) updateRiskPanel(item.risk_score, item.risk_level, item.vax_coverage, item.stringency);
+      }
+      await runForecast();
+    }
+
+    async function runForecast() {
+      const country = document.getElementById("country-select").value;
+      const horizon = parseInt(document.getElementById("horizon-input").value);
+      const myReq = ++_reqId;  // capture snapshot — stale responses will see myReq !== _reqId
+      _selectedCountry = country;
+      _chartHasData = false;   // reset so Phase 1 uses newPlot
+      document.getElementById("chart-title").textContent = country;
+      const short = country.length > 10 ? country.slice(0, 10) + "..." : country;
+      document.getElementById("stat-region").textContent = short;
+      document.getElementById("stat-horizon").textContent = "Horizon: " + horizon + "d";
+      document.getElementById("sc-country-label").textContent = country;
+
+      /* Phase 1: load timeseries + risk (fast, ~0.1s each) */
+      document.getElementById("forecast-chart").innerHTML =
+        '<div class="loading-box" style="height:300px;"><span class="spinner"></span>&nbsp; Loading history&hellip;</div>';
+      document.getElementById("drivers-chart").innerHTML =
+        '<div class="loading-box" style="height:220px;"><span class="spinner"></span></div>';
+
+      const [hist, risk] = await Promise.all([
+        loadTimeseries(country).catch(() => []),
+        loadRisk(country).catch(() => null),
+      ]);
+
+      if (myReq !== _reqId) return; // another country was selected — discard
+
+      _histData = hist;
+      _forecastData = null;
+
+      if (!_histData || _histData.length === 0) {
+        document.getElementById("forecast-chart").innerHTML =
+          '<div class="loading-box" style="height:300px;font-size:12px;color:var(--muted);">No historical data for ' + country + '</div>';
+      } else {
+        drawHistoryChart(); // Phase 1: instant history draw, no forecast traces yet
+      }
+
+      if (risk) {
+        const item = _riskMapData && _riskMapData.find(c => c.country === country);
+        updateRiskPanel(
+          risk.outbreak_probability, risk.risk_level,
+          item ? item.vax_coverage : null,
+          item ? item.stringency : null
+        );
+        renderDrivers(risk);
+      } else {
+        document.getElementById("drivers-chart").innerHTML =
+          '<div class="loading-box" style="height:220px;font-size:12px;color:var(--muted);">Risk data unavailable</div>';
+      }
+
+      /* Phase 2: ML forecast — addTraces appends silently, zero re-render, zero spinner */
+      if (!_histData || _histData.length === 0) return;
+      const hint = document.getElementById("forecast-loading-hint");
+      hint.style.display = "inline";
+      try {
+        const forecast = await loadForecast(country, horizon);
+        if (myReq !== _reqId) return; // stale — another country overtook us
+        _forecastData = forecast;
+        addForecastTraces(); // silently appends — no spinner, no flicker
+      } catch (e) {
+        console.warn("forecast failed", e);
+      } finally {
+        hint.style.display = "none";
+      }
+    }
+
+    function resetScenario() {
+      document.getElementById("sc-mobility").value   = 50;
+      document.getElementById("sc-vax").value        = 0;
+      document.getElementById("sc-stringency").value = 50;
+      document.getElementById("mob-val").textContent = "50%";
+      document.getElementById("vax-val").textContent = "0%";
+      document.getElementById("str-val").textContent = "50%";
+      document.getElementById("scenario-result").classList.add("hidden");
+    }
+
+    async function runScenario() {
+      const country    = document.getElementById("country-select").value;
+      const horizon    = parseInt(document.getElementById("horizon-input").value);
+      const mobility   = parseInt(document.getElementById("sc-mobility").value)   / 100;
+      const vax        = parseInt(document.getElementById("sc-vax").value)        / 100;
+      const stringency = parseInt(document.getElementById("sc-stringency").value) / 100;
+
+      const el = document.getElementById("scenario-result");
+      el.innerHTML = '<div class="loading-box" style="height:60px;"><span class="spinner"></span>&nbsp; Computing scenario&hellip;</div>';
+      el.classList.remove("hidden");
+
+      try {
+        const d = await fetch(`${API}/predict/scenario`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            region_ids: [country], horizon,
+            interventions: [
+              { type: "mobility_reduction",      region: country, magnitude: mobility - 0.5 },
+              { type: "vaccination_acceleration", region: country, magnitude: vax },
+              { type: "policy_shift",             region: country, magnitude: stringency - 0.5 },
+            ],
+          }),
+        }).then(r => r.json());
+
+        const delta = (d.delta && d.delta[0]) || {};
+        const pct   = delta.delta_percent != null ? delta.delta_percent : 0;
+        const sign  = pct >= 0 ? "+" : "";
+        const color = pct <= -5 ? "var(--green)" : pct >= 5 ? "var(--red)" : "var(--orange)";
+        const icon  = pct <= -5 ? "&#8595;" : pct >= 5 ? "&#8593;" : "&#8594;";
+
+        el.innerHTML =
+          '<div class="label" style="margin-bottom:8px;">Scenario Impact &mdash; ' + country + '</div>' +
+          '<div class="big" style="color:' + color + ';">' + icon + ' ' + sign + pct.toFixed(1) + '% cases</div>' +
+          '<div style="font-size:12px;color:var(--muted);margin-top:6px;">vs baseline over ' + horizon + ' days</div>';
+
+        const baseline = d.baseline_forecast && d.baseline_forecast.forecasts && d.baseline_forecast.forecasts[0];
+        const scenario = d.intervention_forecast && d.intervention_forecast.forecasts && d.intervention_forecast.forecasts[0];
+        if (baseline && scenario && _histData && _histData.length > 0) {
+          renderScenarioChart(baseline, scenario);
+        }
+
+      } catch (e) {
+        el.innerHTML = '<div style="color:var(--red);font-size:12px;">Scenario failed: ' + e.message + '</div>';
+      }
+    }
+
+    function renderScenarioChart(baseline, scenario) {
+      const hist = _histLen > 0 ? _histData.slice(-_histLen) : _histData;
+      Plotly.newPlot("forecast-chart", [
+        {
+          name: "Historical",
+          x: hist.map(r => r.date),
+          y: hist.map(r => Math.max(r.daily_new_cases != null ? r.daily_new_cases : (r.confirmed_cases || 0), 0)),
+          type: "scatter", mode: "lines",
+          line: { color: "#2563eb", width: 1.8 },
+          fill: "tozeroy", fillcolor: "rgba(37,99,235,0.06)",
+        },
+        {
+          name: "Baseline Forecast",
+          x: baseline.dates, y: baseline.predicted_cases,
+          type: "scatter", mode: "lines",
+          line: { color: "#ea580c", width: 2, dash: "dot" },
+        },
+        {
+          name: "Scenario Forecast",
+          x: scenario.dates, y: scenario.predicted_cases,
+          type: "scatter", mode: "lines",
+          line: { color: "#15803d", width: 2.5, dash: "dash" },
+        },
+      ], pLayout(), pConfig);
+    }
+
+    /* ---- init ------------------------------------------------------------ */
+    async function init() {
+      await checkHealth();
+      await loadCountries();
+      document.getElementById("country-select")
+        .addEventListener("change", e => selectCountry(e.target.value));
+      // Fire risk-map in background — don't block chart loading
+      loadRiskMap();
+      // Start chart loading immediately in parallel
+      await selectCountry("India");
+    }
+
+    init();
+  </script>
+</body>
+</html>
