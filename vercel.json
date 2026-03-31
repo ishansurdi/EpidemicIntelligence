@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "outputDirectory": "frontend",
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "https://REPLACE_WITH_YOUR_RENDER_URL.onrender.com/api/v1/:path*"
+    }
+  ]
+}
