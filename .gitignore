@@ -1,0 +1,41 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+.env
+.env.*
+
+# Tools / IDE
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+
+# Logs & temp scripts
+*.log
+uvicorn.log
+uvicorn_err.log
+write_ui.py
+
+# Large raw source data (re-fetchable via scraper.py)
+data/Global_Mobility_Report.csv
+data/time_series_covid19_confirmed_global.csv
+data/owid/*.csv
+
+# Keep OWID meta files and processed outputs
+!data/owid/*.meta.json
+!data/processed/
+
+# ML artifacts — keep trained model weights and metrics for deployment
+# ml/artifacts/ is intentionally NOT excluded
+logs/
+
