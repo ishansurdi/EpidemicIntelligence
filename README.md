@@ -18,6 +18,19 @@ Three deliverables. All shipped.
 
 ---
 
+## Screenshots
+
+**Global Outbreak Risk Map** — 201 countries colour-coded by real-time risk score  
+![Global Outbreak Risk Map](images/image1.png)
+
+**Case Trajectory & Forecast** — Historical cases (blue) with Neural ODE + GAT ensemble forecast (orange) and Top Risk Countries leaderboard  
+![Case Trajectory and Forecast](images/image2.png)
+
+**Scenario Sandbox & Risk Factor Drivers** — Counterfactual intervention simulation and per-country factor attribution  
+![Scenario Sandbox and Risk Factor Drivers](images/image.png)
+
+---
+
 ## The Approach
 
 ### 1. Data Foundation — All Three Datasets Used
