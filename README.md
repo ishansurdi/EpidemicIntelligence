@@ -2,6 +2,9 @@
 
 > Full-stack epidemic forecasting system combining physics-informed deep learning, graph attention networks, and real-time interactive visualisation across 201 countries.
 
+**Live Demo:** https://episentinel-frontend.onrender.com
+**API:** https://epidemicintelligence.onrender.com/api/v1/health
+
 ---
 
 ## What We Built
