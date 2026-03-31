@@ -1,0 +1,15 @@
+{
+  "model": "TemporalGAT",
+  "config": {
+    "num_nodes": 201,
+    "temporal_dim": 14,
+    "feature_dim": 4,
+    "num_heads": 4,
+    "hidden_dim": 32,
+    "gat_layers": 2
+  },
+  "train_windows": 300,
+  "test_windows": 75,
+  "test_mae": 2208.6481290690103,
+  "test_rmse": 11178.278258463542
+}

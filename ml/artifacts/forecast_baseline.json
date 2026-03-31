@@ -1,0 +1,4 @@
+{
+  "name": "rolling_7d_persistence",
+  "description": "Predict next-day new cases using previous rolling_7d_cases signal."
+}

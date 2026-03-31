@@ -1,0 +1,8 @@
+{
+  "model": "NeuralODE-SEIR",
+  "test_mae": 3019.850341796875,
+  "test_rmse": 19585.974609375,
+  "train_samples": 16000,
+  "epochs_trained": 50,
+  "y_scale": 13.686713218688965
+}
